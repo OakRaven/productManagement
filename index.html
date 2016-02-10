@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/app.css">
+<title>Acme Product Management</title>
+
+<head>
+
+    <body ng-app="productManagement" ng-controller="ProductListController as vm">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Product List</div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>
+                                <button class="btn btn-primary" ng-click="vm.toggleImages()">
+                                    {{vm.showImage ? "Hide" : "Show"}} Image</button>
+                            </td>
+                            <td>Product</td>
+                            <td>Code</td>
+                            <td>Available</td>
+                            <td>Price</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in vm.products">
+                            <td><img ng-src="{{product.imageUrl}}" style="width: 50px; margin: 2px" title="{{product.productName}}"
+                                ng-if="vm.showImage" /></td>
+                            <td>{{ product.productName }}</td>
+                            <td>{{ product.productCode }}</td>
+                            <td>{{ product.releaseDate }}</td>
+                            <td>{{ product.price | currency }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/products/product-list-controller.js"></script>
+    </body>
+</head>
+
+</html>
