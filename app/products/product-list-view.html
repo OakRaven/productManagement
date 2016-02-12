@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">Product List</div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary" ng-click="vm.toggleImages()">
+                            {{vm.showImage ? "Hide" : "Show"}} Image</button>
+                    </td>
+                    <td>Product</td>
+                    <td>Code</td>
+                    <td>Available</td>
+                    <td>Price</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in vm.products">
+                    <td><img ng-src="{{product.imageUrl}}" style="width: 50px; margin: 2px" title="{{product.productName}}" ng-if="vm.showImage"
+                        /></td>
+                    <td>{{ product.productName }}</td>
+                    <td>{{ product.productCode }}</td>
+                    <td>{{ product.releaseDate }}</td>
+                    <td>{{ product.price | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
