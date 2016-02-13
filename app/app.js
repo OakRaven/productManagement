@@ -6,6 +6,7 @@
     angular
         .module("productManagement", 
             [ "ui.router",
+              "ui.mask",
               "common.services",
               "productResourceMock"])
         .config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$urlRouterProvider){
