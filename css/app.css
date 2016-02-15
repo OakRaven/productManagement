@@ -30,7 +30,13 @@ form legend {
     position: relative;
     text-decoration: none;
 }
+
 .wizard .active {
     background: #007ACC;
     color: #fff;
+}
+
+input.k-textbox, input.k-input[type=text] {
+    width: 100%;
+    font-size: 14px;
 }
