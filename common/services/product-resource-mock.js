@@ -91,6 +91,7 @@
             
             $httpBackend.whenPOST(productUrl).respond(function(method, url, data){
                 var product = angular.fromJson(data);
+                product.releaseDate = new Date(product.releaseDate);
                 
                 if(!product.productId) {
                     product.productId = products[products.length - 1].productId + 1;

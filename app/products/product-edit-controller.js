@@ -20,6 +20,7 @@
         
         vm.submit = function(){
             vm.product.$save();
+            vm.product.releaseDate = new Date(vm.product.releaseDate);
         }
         
         vm.cancel = function(){
